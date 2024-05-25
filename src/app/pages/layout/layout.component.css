@@ -1,0 +1,80 @@
+* {
+  font-family: "Segoe UI", "Helvetica", sans-serif;
+}
+
+nav {
+  width: 250px;
+  height: 100%;
+  background-color: #f8f7f7;
+  position: fixed;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: block;
+  padding-left: 6px;
+}
+
+nav button {
+  display: block;
+  border: none;
+  padding: 10px;
+  width: 95%;
+  border-radius: 5px;
+  text-align: left;
+  text-decoration: none;
+  background-color: inherit;
+}
+
+nav button:hover {
+  background-color: #e8e4e2;
+  cursor: pointer;
+}
+
+nav ul button:focus {
+  background-color: #ffefe5;
+  color: #a81f00;
+}
+
+nav svg {
+  margin-right: 2px;
+}
+
+#add-task-btn {
+  color: #a81f00;
+  font-weight: bold;
+}
+
+#add-task-btn i {
+  font-size: 20px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.menu p {
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+
+.menu button {
+  display: inline-block;
+  width: auto;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: inherit;
+}
+
+.menu button:focus {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
