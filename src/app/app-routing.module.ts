@@ -1,31 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { LayoutComponent } from './pages/layout/layout.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CampaignsComponent } from './campaigns/campaigns.component';
+import { NewcampaignsComponent } from './newcampaigns/newcampaigns.component';
+import { LoginComponent } from './login/login.component';
 import { authGuard } from './auth.guard';
 
 const routes: Routes = [
-  {
-    path:'',
-    redirectTo : 'login',
-    pathMatch:'full',
-  },
-  {
-    path:'login',
-    component: LoginComponent,
-  },
-  {
-    path:'',
-    component: LayoutComponent,
-    children: [
-      {
-        path:'dashboard',
-        component: DashboardComponent,
-        canActivate: [authGuard]
-      }
-    ]
-  }
+  { path: 'campaigns', component: CampaignsComponent, canActivate: [authGuard] },
+  { path: 'newcampaign', component: NewcampaignsComponent, canActivate: [authGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/campaigns', pathMatch: 'full' },
+  { path: '**', redirectTo: '/campaigns' }
 ];
 
 @NgModule({

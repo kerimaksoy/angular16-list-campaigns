@@ -3,16 +3,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [RouterTestingModule],
+    declarations: [AppComponent]
+  }));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -20,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular17-list-campaigns'`, () => {
+  it(`should have as title 'Moneytolia'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular17-list-campaigns');
+    expect(app.title).toEqual('Moneytolia');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular17-list-campaigns');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Moneytolia app is running!');
   });
 });

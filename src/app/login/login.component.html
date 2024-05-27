@@ -1,0 +1,17 @@
+<div class="loginform">
+  <img class="login-image" src="../../assets/home-banner.webp" alt="">
+  <p class="login-info"> username: admin password: 1234</p>
+  <form action="" autocomplete="off">
+      <p>Username</p>
+      <input type="text" [(ngModel)]="loginObj.username" name="username" placeholder="username">
+      <p>Password</p>
+      <input type="password" [(ngModel)]="loginObj.password" name="password" placeholder="****">
+      <div *ngIf="errorMessage" class="error-message error">{{ errorMessage }}</div>
+      <input type="submit" (click)="onLogin()" name="login-btn" value="Login">
+  </form>      
+</div>
+<div class="login-images">
+<img class="left-image" src="../../assets/login-img1.png" alt="">  
+<img class="right-image" src="../../assets/login-img2.png" alt="">  
+</div>
+

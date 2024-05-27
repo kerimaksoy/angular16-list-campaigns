@@ -1,0 +1,25 @@
+.allContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+mat-card {
+    width: 700px;
+}
+
+.formFields {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.actionButtons {
+    margin-right: 20px;
+}
+
+@media (max-width: 900px) {
+    mat-card {
+        width: 350px;
+    }
+}

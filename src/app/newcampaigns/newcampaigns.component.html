@@ -1,0 +1,38 @@
+<div class="allContent">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Add new campaign</mat-card-title>
+            <mat-card-subtitle>Fill out all fields</mat-card-subtitle>
+        </mat-card-header>
+        <form [formGroup]="newCampaignForm">
+
+            <div class="formFields">
+
+                <mat-form-field class="full-width">
+                    <mat-label>Campaign Title</mat-label>
+                    <input matInput formControlName="title">
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Campaign Description</mat-label>
+                    <textarea matInput formControlName="description"> </textarea>
+                </mat-form-field>
+
+                <!-- <mat-form-field class="full-width">
+                    <mat-label>Phone</mat-label>
+                    <input matInput formControlName="phone">
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address">
+                </mat-form-field> -->
+            </div>
+
+            <mat-card-actions>
+                <button type="button" class="actionButtons" mat-raised-button [disabled]="!newCampaignForm.valid"
+                    (click)="createNewCampaign()" color="primary">Create</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>

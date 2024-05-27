@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Update the campaign</h1>
+<div mat-dialog-content>
+    <form [formGroup]="updateForm">
+        <mat-form-field class="full-width">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" required> </textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Point</mat-label>
+            <input matInput formControlName="point" [disabled]="true">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Date</mat-label>
+            <input matInput formControlName="date">
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button class="actionButtons" mat-raised-button mat-button mat-dialog-close>Cancel</button>
+    <button class="actionButtons" mat-raised-button mat-dialog-close [disabled]="!updateForm.valid" cdkFocusInitial
+        (click)="updateCampaign()" color="primary">Update</button>
+</div>

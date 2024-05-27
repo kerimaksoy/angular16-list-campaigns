@@ -1,1 +1,52 @@
-<router-outlet></router-outlet>
+<mat-toolbar *ngIf="showLayout" class="header" >
+    <a routerLink="/campaigns" class="header-logo">
+        <img src="https://www.moneytolia.com/img/logo.svg" alt="Logo">
+    </a>
+    <a mat-button (click)="logout()" class="header-logout">
+        <mat-icon>exit_to_app</mat-icon> Log Out
+    </a>
+    <div class="mobile-sidebar">
+        <div class="side-nav-items">
+            <div>
+                <a  mat-button routerLink="/campaigns"
+                    class="side-menu-item"><mat-icon>library_books</mat-icon>Campaigns</a>
+            </div>
+            <div>
+                <a  mat-button routerLink="/newcampaign"
+                    class="side-menu-item"><mat-icon>library_add</mat-icon>Add
+                    Campaign</a>
+            </div>
+            <div>
+                <a mat-button (click)="logout()" style="color: white;">
+                    <mat-icon>exit_to_app</mat-icon> Log Out
+                </a>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav *ngIf="showLayout" #sidenav mode="side" opened [fixedInViewport]="true" [fixedTopGap]="80" disableClose>
+        <div class="side-nav-items">
+            <div>
+                <a  mat-button routerLink="/campaigns"
+                    class="side-menu-item"><mat-icon>library_books</mat-icon>
+                    <span class="side-menu-text">Campaigns</span>
+                </a>
+            </div>
+            <div>
+                <a  mat-button routerLink="/newcampaign"
+                    class="side-menu-item"><mat-icon>library_add</mat-icon>
+                    <span class="side-menu-text">Add Campaign</span>
+                </a>
+            </div>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
