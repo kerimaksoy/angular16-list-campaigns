@@ -1,3 +1,7 @@
+[build]
+  command = "ng build --prod"
+  publish = "dist/address-book-angular"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
