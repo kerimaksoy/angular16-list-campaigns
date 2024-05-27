@@ -1,6 +1,6 @@
 [build]
   command = "ng build --prod"
-  publish = "dist/address-book-angular"
+  publish = "dist/angular16-list-campaigns"
 
 [[redirects]]
   from = "/*"
